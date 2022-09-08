@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.hub": true,
+    "**/.vscode": true,
+    "**/jest.config.js": true
+  },
+  "editor.fontSize": 16
+}
