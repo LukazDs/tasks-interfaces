@@ -1,18 +1,19 @@
 import { connection } from "../database";
-import { CreateTask } from "../services/taskService";
+import { CreateTask, ICreateTaskData } from "../services/taskService";
 
 async function findAll() {
   //any
-  const { rows } = await connection.query<[]>("SELECT * FROM tasks");
+  const { rows } = await connection.query<ICreateTaskData>("SELECT * FROM tasks");
   return rows;
 }
 
 async function findByTitle(title: string) {
   //any
-  const { rows } = await connection.query<[]>(
+  const { rows } = await connection.query<ICreateTaskData>(
     "SELECT * FROM tasks WHERE title=$1",
     [title]
   );
+ 
   return rows[0];
 }
 
